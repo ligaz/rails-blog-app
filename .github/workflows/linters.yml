@@ -17,6 +17,7 @@ jobs:
       - name: Install dependencies
         run: |
           brew install postgresql
+          brew services start postgresql@14
           bundle install
 
       - name: Rubocop Report
