@@ -38,7 +38,7 @@ RSpec.describe User, type: :model do
       old_post = subject.posts.create(title: 'Older Post', text: 'Content', created_at: 1.day.ago)
       new_post = subject.posts.create(title: 'Newer Post', text: 'Content')
       new_post2 = subject.posts.create(title: 'Newest Post', text: 'Content', created_at: 1.hour.ago)
-      new_post3 = subject.posts.create(title: 'Newest Post', text: 'Content', created_at: 2.hour.ago)
+      new_post3 = subject.posts.create(title: 'Newest Post', text: 'Content', created_at: 2.hours.ago)
 
       recent_posts = subject.recent_posts
 
@@ -50,7 +50,7 @@ RSpec.describe User, type: :model do
     it 'returns the 3 most recent posts for the user if user has 3 post only' do
       new_post = subject.posts.create(title: 'Newer Post', text: 'Content')
       new_post2 = subject.posts.create(title: 'Newest Post', text: 'Content', created_at: 1.hour.ago)
-      new_post3 = subject.posts.create(title: 'Newest Post', text: 'Content', created_at: 2.hour.ago)
+      new_post3 = subject.posts.create(title: 'Newest Post', text: 'Content', created_at: 2.hours.ago)
 
       recent_posts = subject.recent_posts
 
