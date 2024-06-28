@@ -15,7 +15,9 @@ jobs:
       - uses: ruby/setup-ruby@v1
 
       - name: Install dependencies
-        run: bundle install
+        run: |
+          brew install libpq
+          bundle install
 
       - name: Rubocop Report
         run: rubocop --color
